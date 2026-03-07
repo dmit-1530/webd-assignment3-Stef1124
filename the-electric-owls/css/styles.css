@@ -157,7 +157,99 @@ footer {
 }
 
 /* ***************** Add media query for the 588px screen ***************** */
+@media (min-width: 588px) {
 
+    /* Header navigation becomes horizontal */
+    header nav ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Newsletter form layout change */
+    aside form {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Email input no longer fluid */
+    aside input[type="email"] {
+        flex: 0 0 250px; /* fixed width */
+    }
+
+    aside input[type="submit"] {
+        flex: 0 0 auto;
+    }
+}
+
+/* ***************** Add media query for the 980px screen ***************** */
+@media (min-width: 980px) {
+
+    /* Main content sections side-by-side */
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    main > section {
+        flex: 1 1 48%;
+    }
+
+    aside {
+        flex: 1 1 100%;
+    }
+
+    /* CTA buttons left aligned */
+    .btn-center {
+        text-align: left;
+    }
+
+    /* Footer text restriction */
+    footer p {
+        max-width: 60ch;
+    }
+}
 /* ***************** footer ***************** */
 
 /* ***************** footer ***************** */
+/* ***************** Add media query for the 1920px screen ***************** */
+@media (min-width: 1920px) {
+
+    /* Fixed-width container */
+    .container {
+        max-width: 1720px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Remove inner mobile padding if applied */
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Three equal columns layout */
+    main {
+        display: flex;
+        gap: 2rem;
+    }
+
+    main > section,
+    main > aside {
+        flex: 1 1 33.333%;
+    }
+
+    /* Center footer content */
+    footer .container {
+        text-align: center;
+    }
+}
